@@ -35,5 +35,5 @@ Build a playable black jack game in javaScript that follows the MVC model.
 
 ### WIREFRAME
 
-<img src="https://i.ibb.co/MDgK4zR/blackjack-js.png" alt="Black Jack JS Wireframe" border="0">
+<img src="https://i.ibb.co/FKq2bKB/black-jack-wireframe.png" alt="Black Jack JS Wireframe" border="0">
 
