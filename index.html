@@ -3,37 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lusitana&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <title>BlackJack JS</title>
     <script defer src="js/main.js"></script>
 </head>
 <body>
-    <header>BlackJack</header>
+    <header>Black <span class="black-text">Jack</span></header>
     <main>
-        <section id="dealers-area">
+        <section id="dealers-row">
             <h4 id="dealers-message">DEALER</h1>
             <div id="dealers-cards">
-                <div id="dealer-card-1"></div>
-                <div id="dealer-card-2"></div>
-                <div id="dealer-card-3"></div>
+                <div id="dealer-card-1">A</div>
+                <div id="dealer-card-2">K</div>
+                <div id="dealer-card-3">J</div>
                 <div id="dealer-card-4"></div>
                 <div id="dealer-card-5"></div>
             </div>
         </section>
-        <section id="players-area">
+        <section id="players-row">
             <h4 id="players-message">PLAYER</h1>
             <div id="players-cards">
-                <div id="players-card-1"></div>
-                <div id="players-card-2"></div>
-                <div id="players-card-3"></div>
+                <div id="players-card-1">A</div>
+                <div id="players-card-2">K</div>
+                <div id="players-card-3">J</div>
                 <div id="players-card-4"></div>
                 <div id="players-card-5"></div>
             </div>
         </section>
-        <section id="buttons">
-            <button id="deal">DEAL</button>
-            <button id="hit">HIT</button>
-            <button id="stay">STAY</button>
+        <section id="button-row">
+            <button id="deal-btn">DEAL</button>
+            <button id="hit-btn">HIT</button>
+            <button id="stay-btn">STAY</button>
         </section>
     </main>
 </body>

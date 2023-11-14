@@ -1,0 +1,74 @@
+* {
+    box-sizing: border-box;
+    margin:0;
+}
+
+body {
+    /* background-image: url("images/table-backgrnd.jpg"); */
+    background-image: url("https://i.ibb.co/zQgvw2s/table-backgrnd.jpg");
+    height:100vh;
+    background-size:contain;
+    /* text-align: center; */
+}
+
+header {
+    /* background-color: #302F2F; */
+    text-align: center;
+    color:white;
+    font-size: 10vmin;
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+    padding: 15px 0px 15px 0px;
+    text-shadow: 2px 3px 4px #0f0f0f;
+    margin-bottom: 20px;
+    font-family: Lusitana;
+}
+
+.black-text {
+    color:black;
+}
+
+#dealers-row, #players-row, #button-row {
+    text-align: center;
+    padding:20px;
+}
+
+#dealers-message, #players-message {
+    color:#fff;
+    font-size: 3vmin;
+}
+
+#dealers-cards, #players-cards  {
+    display:inline-flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+section #button-row {
+    display: inline-flex;
+    justify-content:center;
+    margin:20px;
+}
+
+#deal-btn {
+    background-color: #307B33;
+    color:#fff;
+    border-radius: 5px;
+    font-size: 3vmin;
+    padding:5px;
+}
+
+#hit-btn {
+    background-color: #000;
+    color:#fff;
+    border-radius: 5px;
+    font-size: 3vmin;
+    padding:5px;
+}
+
+#stay-btn {
+    background-color: #000;
+    color:#fff;
+    border-radius: 5px;
+    font-size: 3vmin;
+    padding:5px;
+}
