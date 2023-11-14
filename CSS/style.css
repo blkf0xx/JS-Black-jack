@@ -8,15 +8,12 @@ body {
     background-image: url("https://i.ibb.co/zQgvw2s/table-backgrnd.jpg");
     height:100vh;
     background-size:contain;
-    /* text-align: center; */
 }
 
 header {
-    /* background-color: #302F2F; */
     text-align: center;
     color:white;
     font-size: 10vmin;
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     padding: 15px 0px 15px 0px;
     text-shadow: 2px 3px 6px #0f0f0f;
     margin-bottom: 20px;
