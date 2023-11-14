@@ -24,10 +24,26 @@ function init() {
 }
 
 // Create a deck of cards
-SUITS.forEach(function(suit) {
-    VALUES.forEach(function(value) {
-        deck.push(suit + value)
+function createDeck() {
+    SUITS.forEach(function (suit) {
+        VALUES.forEach(function (value) {
+            deck.push(suit + value)
+        })
     })
-})
+    return deck
+}
 
-console.log(deck)
+// Shuffle cards
+function shuffleCards(deck) {
+    for (let i = 0; i < 52; i++) {
+        let tempCard = deck[i]
+        let randomIdx = Math.floor(Math.random() * 52)
+        deck[i] = deck[randomIdx]
+        deck[randomIdx] = tempCard
+    }
+}
+
+const newDeck = createDeck()
+shuffleCards(newDeck)
+
+console.log(newDeck)
