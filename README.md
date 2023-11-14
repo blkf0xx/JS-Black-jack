@@ -8,7 +8,7 @@ Click the 'Hit' or 'Stay' buttons to draw cards and get as close as possible to 
 ### REQUIREMENTS:
 - [ ] Render a game in the browser.
 - [ ] Include win/loss logic and render win/loss messages in HTML. Popup alerts using the alert() method are okay during development, but not production.
-- [ ] Include separate HTML, CSS & JavaScript files.
+- [x] Include separate HTML, CSS & JavaScript files.
 - [ ] Have properly indented HTML, CSS & JavaScript. In addition, vertical whitespace needs to be consistent.
 - [ ] No remaining dead and/or commented out code (code that will never be called).
 - [ ] Have functions and variables that are named sensibly. Remember, functions are typically named as verbs and variables (data) named as nouns.

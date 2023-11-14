@@ -18,7 +18,7 @@ header {
     font-size: 10vmin;
     /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
     padding: 15px 0px 15px 0px;
-    text-shadow: 2px 3px 4px #0f0f0f;
+    text-shadow: 2px 3px 6px #0f0f0f;
     margin-bottom: 20px;
     font-family: Lusitana;
 }
@@ -49,26 +49,35 @@ section #button-row {
     margin:20px;
 }
 
+#deal-btn, #hit-btn, #stay-btn {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    color:#fff;
+    border-radius: 5px;
+    font-size: 3vmin;
+    padding: 8px 26px;
+    margin:5px;
+    border:none;
+    background-color: #000;
+}
+
 #deal-btn {
-    background-color: #307B33;
-    color:#fff;
-    border-radius: 5px;
-    font-size: 3vmin;
-    padding:5px;
+    background-color: green;
 }
 
-#hit-btn {
-    background-color: #000;
-    color:#fff;
-    border-radius: 5px;
-    font-size: 3vmin;
-    padding:5px;
+#deal-btn:hover {
+    background-color: #3e8e41
 }
 
-#stay-btn {
-    background-color: #000;
-    color:#fff;
-    border-radius: 5px;
-    font-size: 3vmin;
-    padding:5px;
+#hit-btn:hover, #stay-btn:hover {
+    background-color: #fff;
+    color:black;
 }
+
+button:active {
+    transform: translateY(4px);
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
