@@ -116,8 +116,13 @@ function hit() {
         disableBtns()
         revealDealerCard()
         calculateDealerScore()
-        checkWIn()
+        checkWin()
     }
+}
+
+function stay() {
+
+    render()
 }
 
 function calculatePlayerScore() {
@@ -144,36 +149,38 @@ function calculatePlayerScore() {
 }
 
 function calculateDealerScore() {
-    dealerScore = 0;
-
+    dealerScore = 0
     for (let card of dealerHand) {
-        const value = card.slice(0, -1);
+        const value = card.slice(0, -1)
         if (['J', 'Q', 'K'].includes(value)) {
-            dealerScore += 10;
+            dealerScore += 10
         } else if (value === 'A') {
-            dealerScore += 11;
+            dealerScore += 11
         } else {
-            dealerScore += parseInt(value, 10);
+            dealerScore += parseInt(value, 10)
         }
     }
-
-    // Check for aces and adjust dealer's score
+    // check for aces and adjust dealers score
     for (let card of dealerHand) {
-        const value = card.slice(0, -1);
+        const value = card.slice(0, -1)
         if (value === 'A' && dealerScore > 21) {
-            dealerScore -= 10;
+            dealerScore -= 10
         }
     }
-
     dealersMsg.innerText = `DEALER HAS: ${dealerScore}`;
 }
 
-function stay() {
-
-    render()
+function revealDealerCard() {
+    dealersCards.innerHTML = ''
+    dealerHand.forEach((card, idx) => {
+        const cardEl = document.createElement('img')
+        cardEl.src = `./images/cards/${card}.png`
+        cardEl.classList.add('cards')
+        dealersCards.appendChild(cardEl)
+    })
 }
 
-function checkWIn() {
+function checkWin() {
     if (playerScore === 21) {
         handResult = `PLAYER WINS! ${playerScore}`
     } else if (playerScore > 21) {
@@ -190,8 +197,10 @@ function checkWIn() {
     renderResult()
 }
 
-function revealDealerCard() {
-    
+function renderResult() {
+    dealersMsg.innerText = `DEALER HAS: ${dealerScore}`
+    playersMsg.innerText = `PLAYER HAS: ${playerScore}`
+    dealersMsg.innerText = handResult
 }
 
 function disableBtns() {
