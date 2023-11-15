@@ -106,35 +106,41 @@ function renderCards() {
     });
 }
 
-// need to fix this to include if/else for player score?
 function hit() {
-    playerHand.push(deck.splice(0, 1)[0])
-    calculatePlayerScore()
-    checkwin()
-    render()
+    const drawnCard = deck.splice(0, 1)[0]
+    playerHand.push(drawnCard)
+    calculatePlayerScore();
+    render();
+
+    if (playerScore > 21) {
+        disableBtns()
+        revealDealerCard()
+        calculateDealerScore()
+        checkWIn()
+    }
 }
 
 function calculatePlayerScore() {
     playerScore = 0;
 
     for (let card of playerHand) {
-        const value = card.slice(0, -1);
+        const value = card.slice(0, -1)
         if (['J', 'Q', 'K'].includes(value)) {
-            playerScore += 10;
+            playerScore += 10
         } else if (value === 'A') {
-            playerScore += 11;
+            playerScore += 11
         } else {
-            playerScore += parseInt(value, 10);
+            playerScore += parseInt(value, 10)
         }
     }
     // check for aces and adjust players score
     for (let card of playerHand) {
-        const value = card.slice(0, -1);
+        const value = card.slice(0, -1)
         if (value === 'A' && playerScore > 21) {
-            playerScore -= 10;
+            playerScore -= 10
         }
     }
-    playersMsg.innerText = `PLAYERS HAS: ${playerScore}`;
+    playersMsg.innerText = `PLAYERS HAS: ${playerScore}`
 }
 
 function calculateDealerScore() {
@@ -150,26 +156,42 @@ function calculateDealerScore() {
             dealerScore += parseInt(value, 10);
         }
     }
-    // check for aces and adjust dealers score
+
+    // Check for aces and adjust dealer's score
     for (let card of dealerHand) {
         const value = card.slice(0, -1);
-        if (value === 'A' && playerScore > 21) {
+        if (value === 'A' && dealerScore > 21) {
             dealerScore -= 10;
         }
     }
+
     dealersMsg.innerText = `DEALER HAS: ${dealerScore}`;
 }
 
 function stay() {
-    // need to work on dealers turn 
-    calculateDealerScore()
-    checkWin()
+
     render()
 }
 
-// need to make checkWin function
-function checkWin() {
+function checkWIn() {
+    if (playerScore === 21) {
+        handResult = `PLAYER WINS! ${playerScore}`
+    } else if (playerScore > 21) {
+        handResult = `PLAYER BUSTS! (${playerScore}) DEALER WINS!`;
+    } else if (dealerScore > 21) {
+        handResult = `DEALER BUSTS! (${dealerScore}) PLAYER WINS!`;
+    } else if (playerScore > dealerScore) {
+        handResult = `PLAYER WINS! ${playerScore}`;
+    } else if (dealerScore > playerScore) {
+        handResult = `DEALER HAS ${dealerScore}! DEALER WINS!`;
+    } else {
+        handResult = `ITS A TIE! PLAYER HAS ${playerScore} DEALER HAS ${dealerScore}`;
+    }
+    renderResult()
+}
 
+function revealDealerCard() {
+    
 }
 
 function disableBtns() {
