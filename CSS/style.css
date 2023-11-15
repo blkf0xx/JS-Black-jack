@@ -1,18 +1,17 @@
 * {
     box-sizing: border-box;
-    margin:0;
+    margin: 0;
 }
 
 body {
-    /* background-image: url("images/table-backgrnd.jpg"); */
     background-image: url("https://i.ibb.co/zQgvw2s/table-backgrnd.jpg");
-    height:100vh;
-    background-size:contain;
+    height: 100vh;
+    background-size: contain;
 }
 
 header {
     text-align: center;
-    color:white;
+    color: white;
     font-size: 10vmin;
     padding: 15px 0px 15px 0px;
     text-shadow: 2px 3px 6px #0f0f0f;
@@ -21,49 +20,55 @@ header {
 }
 
 .black-text {
-    color:black;
+    color: black;
 }
 
 .cards {
-    width:15vmin;
+    width: 15vmin;
     border-radius: 10px;
-    padding:5px;
+    padding: 5px;
 }
 
 .cards.hidden {
     visibility: hidden;
 }
 
-#dealers-row, #players-row, #button-row {
+#dealers-row,
+#players-row,
+#button-row {
     text-align: center;
-    padding:20px;
+    padding: 20px;
 }
 
-#dealers-message, #players-message {
-    color:#fff;
+#dealers-message,
+#players-message {
+    color: #fff;
     font-size: 3vmin;
 }
 
-#dealers-cards, #players-cards  {
-    display:inline-flex;
+#dealers-cards,
+#players-cards {
+    display: inline-flex;
     flex-direction: row;
     justify-content: center;
 }
 
 section #button-row {
     display: inline-flex;
-    justify-content:center;
-    margin:20px;
+    justify-content: center;
+    margin: 20px;
 }
 
-#deal-btn, #hit-btn, #stay-btn {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
-    color:#fff;
+#deal-btn,
+#hit-btn,
+#stay-btn {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    color: #fff;
     border-radius: 5px;
     font-size: 3vmin;
     padding: 8px 26px;
-    margin:5px;
-    border:none;
+    margin: 5px;
+    border: none;
     background-color: #000;
 }
 
@@ -75,9 +80,10 @@ section #button-row {
     background-color: #3e8e41
 }
 
-#hit-btn:hover, #stay-btn:hover {
+#hit-btn:hover,
+#stay-btn:hover {
     background-color: #fff;
-    color:black;
+    color: black;
 }
 
 button:active {
@@ -87,4 +93,4 @@ button:active {
 .disabled {
     opacity: 0.5;
     cursor: not-allowed;
-  }
+}

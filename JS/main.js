@@ -41,7 +41,7 @@ function init() {
 }
 
 function createDeck() {
-    const deck = [];
+    deck = [];
     SUITS.forEach(suit => {
         VALUES.forEach(value => {
             deck.push(value + suit);
@@ -79,7 +79,7 @@ function deal() {
 
 function render() {
     renderCards();
-    calculateHandScore();
+    calculatePlayerScore();
 }
 
 function renderCards() {
@@ -108,32 +108,33 @@ function renderCards() {
 
 function hit() {
     playerHand.push(deck.splice(0, 1)[0])
-    calculateHandScore()
+    calculatePlayerScore()
     render()
 }
 
-function calculateHandScore() {
-    playerScore =0
+function calculatePlayerScore() {
+    playerScore = 0;
+    // calculate players score
     for (let card of playerHand) {
-        const value = card.slice(0, -1)
+        const value = card.slice(0, -1);
         if (['J', 'Q', 'K'].includes(value)) {
-            playerScore += 10
-            playersMsg.innerText = playerScore
+            playerScore += 10;
         } else if (value === 'A') {
-            playerScore += 11
+            playerScore += 11;
         } else {
-            playerScore += parseInt(value);
+            playerScore += parseInt(value, 10);
         }
     }
+    // check for aces and adjust players score
     for (let card of playerHand) {
-        const value = card.slice(0, -1)
+        const value = card.slice(0, -1);
         if (value === 'A' && playerScore > 21) {
-            playerScore -= 10
-            playersMsg.innerText = playerScore
+            playerScore -= 10;
         }
     }
-    render()
+    playersMsg.innerText = `PLAYERS HAS: ${playerScore}`;
 }
+
 
 function stay() {
     // dealers turn 
