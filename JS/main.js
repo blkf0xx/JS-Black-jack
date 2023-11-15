@@ -106,15 +106,17 @@ function renderCards() {
     });
 }
 
+// need to fix this to include if/else for player score?
 function hit() {
     playerHand.push(deck.splice(0, 1)[0])
     calculatePlayerScore()
+    checkwin()
     render()
 }
 
 function calculatePlayerScore() {
     playerScore = 0;
-    // calculate players score
+
     for (let card of playerHand) {
         const value = card.slice(0, -1);
         if (['J', 'Q', 'K'].includes(value)) {
@@ -135,12 +137,39 @@ function calculatePlayerScore() {
     playersMsg.innerText = `PLAYERS HAS: ${playerScore}`;
 }
 
+function calculateDealerScore() {
+    dealerScore = 0;
+
+    for (let card of dealerHand) {
+        const value = card.slice(0, -1);
+        if (['J', 'Q', 'K'].includes(value)) {
+            dealerScore += 10;
+        } else if (value === 'A') {
+            dealerScore += 11;
+        } else {
+            dealerScore += parseInt(value, 10);
+        }
+    }
+    // check for aces and adjust dealers score
+    for (let card of dealerHand) {
+        const value = card.slice(0, -1);
+        if (value === 'A' && playerScore > 21) {
+            dealerScore -= 10;
+        }
+    }
+    dealersMsg.innerText = `DEALER HAS: ${dealerScore}`;
+}
 
 function stay() {
-    // dealers turn 
-    // update dealerHand and calculate the dealers score
-    // update handResult
+    // need to work on dealers turn 
+    calculateDealerScore()
+    checkWin()
     render()
+}
+
+// need to make checkWin function
+function checkWin() {
+
 }
 
 function disableBtns() {
