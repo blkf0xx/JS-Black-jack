@@ -74,12 +74,13 @@ function deal() {
     hitBtn.disabled = false;
     stayBtn.classList.remove('disabled');
     stayBtn.disabled = false;
-    render();
+    render()
 }
 
 function render() {
     renderCards();
     calculatePlayerScore();
+    
 }
 
 function renderCards() {
@@ -109,19 +110,26 @@ function renderCards() {
 function hit() {
     const drawnCard = deck.splice(0, 1)[0]
     playerHand.push(drawnCard)
-    calculatePlayerScore();
-    render();
+    calculatePlayerScore()
+    render()
 
-    if (playerScore > 21) {
+    if (playerScore > 21 || playerHand.length === 5) {
         disableBtns()
         revealDealerCard()
         calculateDealerScore()
         checkWin()
+        renderResult()
     }
 }
 
 function stay() {
-
+    disableBtns()
+    revealDealerCard()
+    while (dealerScore < 17) {
+        dealerHand.push(deck.splice(0,1)[0])
+        calculateDealerScore()
+    }
+    checkWin()
     render()
 }
 
@@ -167,7 +175,7 @@ function calculateDealerScore() {
             dealerScore -= 10
         }
     }
-    dealersMsg.innerText = `DEALER HAS: ${dealerScore}`;
+    // dealersMsg.innerText = `DEALER HAS: ${dealerScore}`;
 }
 
 function revealDealerCard() {
@@ -198,8 +206,8 @@ function checkWin() {
 }
 
 function renderResult() {
-    dealersMsg.innerText = `DEALER HAS: ${dealerScore}`
-    playersMsg.innerText = `PLAYER HAS: ${playerScore}`
+    // dealersMsg.innerText = `DEALER HAS: ${dealerScore}`
+    // playersMsg.innerText = `PLAYER HAS: ${playerScore}`
     dealersMsg.innerText = handResult
 }
 
