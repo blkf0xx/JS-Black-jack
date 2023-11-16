@@ -23,6 +23,7 @@ const stayBtn = document.getElementById('stay-btn');
 dealBtn.addEventListener('click', deal);
 hitBtn.addEventListener('click', hit);
 stayBtn.addEventListener('click', stay);
+document.getElementById('reset-btn').addEventListener('click', init)
 
 /*----- functions -----*/
 init();
@@ -36,6 +37,8 @@ function init() {
     playerScore = 0;
     handResult = null;
     dealBtn.classList.remove('disabled');
+    dealBtn.disabled = false;
+    dealersMsg.innerHTML = 'DEALER';
     disableBtns()
     render()
 }
@@ -175,7 +178,6 @@ function calculateDealerScore() {
             dealerScore -= 10
         }
     }
-    // dealersMsg.innerText = `DEALER HAS: ${dealerScore}`;
 }
 
 function revealDealerCard() {
@@ -206,8 +208,6 @@ function checkWin() {
 }
 
 function renderResult() {
-    // dealersMsg.innerText = `DEALER HAS: ${dealerScore}`
-    // playersMsg.innerText = `PLAYER HAS: ${playerScore}`
     dealersMsg.innerText = handResult
 }
 
