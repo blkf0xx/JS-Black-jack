@@ -83,7 +83,6 @@ function deal() {
 function render() {
     renderCards();
     calculatePlayerScore();
-    
 }
 
 function renderCards() {
@@ -129,7 +128,7 @@ function stay() {
     disableBtns()
     revealDealerCard()
     while (dealerScore < 17) {
-        dealerHand.push(deck.splice(0,1)[0])
+        dealerHand.push(deck.splice(0, 1)[0])
         calculateDealerScore()
     }
     checkWin()
