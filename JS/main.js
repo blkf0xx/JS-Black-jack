@@ -93,7 +93,7 @@ function renderCards() {
     dealerHand.forEach((card, idx) => {
         const cardEl = document.createElement('img');
         if (idx === 0 && handResult === null) {
-            cardEl.src = './images/cards/back.png';
+            cardEl.src = './images/cards/BACK.png';
         } else {
             cardEl.src = `./images/cards/${card}.png`;
         }
