@@ -156,7 +156,7 @@ function calculatePlayerScore() {
             playerScore -= 10
         }
     }
-    playersMsg.innerText = `PLAYERS HAS: ${playerScore}`
+    playersMsg.innerText = `PLAYER HAS: ${playerScore}`
 }
 
 function calculateDealerScore() {
